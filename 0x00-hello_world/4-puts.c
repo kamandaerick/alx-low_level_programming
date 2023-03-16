@@ -2,7 +2,7 @@
 /**
  * main - This is the main function marking start of the program
  *
- * Return - Returns 0 since our main function require a return of an integer
+ * Return always 0
  */
 int main(void)
 {
