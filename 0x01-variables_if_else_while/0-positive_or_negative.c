@@ -2,12 +2,11 @@
 #include <time.h>
 /* more headers goes there */
 #include <stdio.h>
-
 /* betty style doc for function main goes there */
 /**
- * main - This is the main function
+ * main - This is the main function containing the whole program
  *
- * Return: returns 0 because the main functio require a reurn int
+ * Return: Returns 0 as an int because the function is defined as int
  */
 int main(void)
 {
@@ -22,5 +21,6 @@ int main(void)
 		printf("%d is zero", n);
 	else
 		printf("%d is negative", n);
+	printf("\n");
 	return (0);
 }
