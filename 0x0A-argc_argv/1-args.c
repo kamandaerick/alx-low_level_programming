@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 /**
  * main - This function prints the number of arguments passed into the program
  * @argc: This is the number of arguments
