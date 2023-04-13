@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include "main.h"
 #include <stdio.h>
-#include <stddef.h>
 /**
  * _strdup - copies a string to the allocated memory and returns it
  * @str: The string to be copied
@@ -9,7 +8,7 @@
  */
 char *_strdup(char *str)
 {
-	char ptr;
+	char *ptr;
 	int i;
 	int j;
 
@@ -25,7 +24,4 @@ char *_strdup(char *str)
 		ptr[j] = str[j];
 	return (ptr);
 }
-
-
-
 
