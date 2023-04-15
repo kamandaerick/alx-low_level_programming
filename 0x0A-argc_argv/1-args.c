@@ -3,7 +3,7 @@
 /**
  * main - This function prints the number of arguments passed into the program
  * @argc: This is the number of arguments
- * * @argv: An array of the arguments passed
+ * @argv: An array of the arguments passed
  * Return: Returns 0 on success
  */
 int main(int argc, char *argv[])
