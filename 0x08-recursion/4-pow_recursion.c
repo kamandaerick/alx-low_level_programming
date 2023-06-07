@@ -1,6 +1,7 @@
 #include "main.h"
 /**
- * _pow_recursion - This function returns the value of the first number raised to the second
+ * _pow_recursion - This function returns the value of the first number 
+ * raised to the second
  * @x: The ase value
  * @y: The power
  * Return: Returns the result of the operation
