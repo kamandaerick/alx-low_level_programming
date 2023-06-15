@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 #include <stdlib.h>
 /**
  * _calloc - This function allocates memory for an array using calloc
@@ -10,10 +11,11 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *ptr;
 
-	ptr = malloc(size * sizeof(unsigned int));
+	ptr = malloc(size * nmemb);
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 	if (ptr == NULL)
 		return (NULL);
+	memset(ptr, 0, nmemb * size);
 	return (ptr);
 }
