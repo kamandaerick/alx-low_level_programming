@@ -10,7 +10,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *ptr;
 
-	ptr = calloc(size, sizeof(unsigned int));
+	ptr = malloc(size * sizeof(unsigned int));
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 	if (ptr == NULL)
