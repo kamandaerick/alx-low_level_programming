@@ -10,37 +10,37 @@ void print_all(const char * const format, ...)
 	int j = 0;
 	va_list parameters;
 	char *s;
+	char *separator = "";
 
 	va_start(parameters, format);
-
-	while (format[j])
+	if (format)
 	{
-		switch (format[j])
+		while (format[j])
 		{
-			case 'c':
-				{
-					printf("%c,", va_arg(parameters, int));
+			switch (format[j])
+			{
+				case 'c':
+					printf("%s%c", separator, va_arg(parameters, int));
 					break;
-				}
-			case 'i':
-					printf("%d,", va_arg(parameters, int));
+				case 'i':
+					printf("%s%d", separator, va_arg(parameters, int));
 					break;
-			case 'f':
-					printf("%f,", va_arg(parameters, double));
+				case 'f':
+					printf("%s%f", separator, va_arg(parameters, double));
 					break;
-			case 's':
+				case 's':
 					s = va_arg(parameters, char *);
-
-					if (s == NULL)
-						printf("(nil),");
-					else
-						printf("%s,", s);
+					if (!s)
+						s = "(nil)";
+					printf("%s%s", separator, s);
 					break;
-			default:
+				default:
 					j++;
 					continue;
+			}
+			separator = ",";
+			j++;
 		}
-		j++;
 	}
 	printf("\n");
 	va_end(parameters);
