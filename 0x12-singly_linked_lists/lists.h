@@ -2,12 +2,17 @@
 #define LISTS_H
 #include <stddef.h>
 int _putchar(char c);
-
+/**
+ * struct node - A singly linked list
+ * @str: pointer to memory allocated string
+ * @len: length of the string
+ * @next: Pointer to the next node
+ */
 typedef struct node
 {
-        char *str;
-        unsigned int len;
-        struct node *next;
+	char *str;
+	unsigned int len;
+	struct node *next;
 } list_t;
 
 size_t print_list(const list_t *h);
