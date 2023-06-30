@@ -3,16 +3,18 @@
 #include <stddef.h>
 int _putchar(char c);
 /**
- * struct node - A singly linked list
- * @str: pointer to memory allocated string
+ * struct list_s - singly linked list
+ * @str: string - (malloc'ed string)
  * @len: length of the string
- * @next: Pointer to the next node
+ * @next: points to the next node
+ *
+ * Description: singly linked list node structure
  */
-typedef struct node
+typedef struct list_s
 {
-	char *str;
-	unsigned int len;
-	struct node *next;
+    char *str;
+    unsigned int len;
+    struct list_s *next;
 } list_t;
 
 size_t print_list(const list_t *h);
