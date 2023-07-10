@@ -7,7 +7,7 @@
  * Return: returns the actual number of letters read
  * or 0 if the file cant be opened
  */
-ssize_t read_textfile(const char *filename, size_t letters);
+ssize_t read_textfile(const char *filename, size_t letters)
 {
 	ssize_t fileDescriptor;
 	ssize_t readLetters;
