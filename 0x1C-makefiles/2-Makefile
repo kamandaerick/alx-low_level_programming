@@ -1,12 +1,17 @@
-# -*-Makefile-*-
-
 CC = gcc
-SRC = $(wildcard *.c)
+SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 
-all: $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 %.o: %.c
 	$(CC) -c -o $@ $<
+
+all: $(NAME)
+
+.PHONY: all clean
+
+clean:
+	rm -f $(NAME) $(OBJ)
