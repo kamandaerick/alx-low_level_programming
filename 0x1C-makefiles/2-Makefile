@@ -1,21 +1,7 @@
-# Define variables
 CC = gcc
-SRC = main.c school.c
+SRC = $(wildcard *.c)
 OBJ = $(SRC:.c=.o)
 NAME = school
 
-# Define the 'all' rule
-all: $(NAME) clean
-
-# Rule to build the executable
-$(NAME): $(OBJ)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
-# Implicit rule to compile .c files to .o files
-%.o: %.c
-	$(CC) -c -o $@ $<
-
-# Optional clean rule
-clean:
-	@rm -f $(NAME)
-
