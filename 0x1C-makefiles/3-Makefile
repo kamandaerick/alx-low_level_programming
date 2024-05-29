@@ -20,7 +20,7 @@ fclean: clean oclean
 
 re: fclean all
 
--include $(OBJ:.o=.d)
+#-include $(OBJ:.o=.d)
 
 %.o: %.c
 	$(CC) -c -o $@ $<
