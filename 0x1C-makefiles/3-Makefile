@@ -1,13 +1,12 @@
-# -*-Makefile-*-
-
-CC: gcc
-SRC: main.c school.c
-OBJ: $(SRC:.c=.o)
-NAME: school
-RM: rm -f
+CC = gcc
+NAME = school
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+RM = rm -f
 
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
+
 all: $(NAME)
 
 clean:
@@ -23,5 +22,5 @@ re: fclean all
 
 -include $(OBJ:.o=.d)
 
-%.0: %.c
-	$(CC) -c -MMD -o $@ $<
+%.o: %.c
+	$(CC) -c -o $@ $<
