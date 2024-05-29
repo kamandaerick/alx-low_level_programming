@@ -1,13 +1,21 @@
-#  -*-Makefile-*-
+# Define variables
 CC = gcc
 SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 
-all = $(NAME)
+# Define the 'all' rule
+all: $(NAME) clean
 
+# Rule to build the executable
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-%.0: %.c
-	$(CC) -c $< -o $@
+# Implicit rule to compile .c files to .o files
+%.o: %.c
+	$(CC) -c -o $@ $<
+
+# Optional clean rule
+clean:
+	@rm -f $(NAME)
+
