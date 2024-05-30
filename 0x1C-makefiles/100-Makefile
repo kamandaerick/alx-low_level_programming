@@ -8,11 +8,11 @@ CFLAGS= -Wall -Werror -Wextra -pedantic
 HEADER = m.h
 
 $(NAME): $(OBJ)
-    ifeq ($(wildcard $(HEADER)),)
-        $(error Header file $(HEADER) is missing)
-    else
-        $(CC) $(CFLAGS) -o $(NAME) $(OBJ)
-    endif
+	ifeq ($(wildcard $(HEADER)),)
+		$(error Header file $(HEADER) is missing)
+	else
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+endif
 
 all: $(NAME)
 
