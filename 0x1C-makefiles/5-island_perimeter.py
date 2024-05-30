@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-
-'''This script defines a function that calculates and returns the perimeter of an island'''
+"""This script defines a function that calculates and returns the perimeter of an island"""
 
 def island_perimeter(grid):
     """Calculate and return the perimeter of an island"""
+
     perimeter = 0
     cols = len(grid[0])
     rows = len(grid)
+
     for i in range(len(grid)):
         for j in range(len(grid[i])):
             if grid[i][j] == 1:
@@ -21,4 +22,3 @@ def island_perimeter(grid):
                     perimeter -= 1
 
     return perimeter
-
