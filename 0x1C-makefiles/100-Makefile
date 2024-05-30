@@ -1,0 +1,27 @@
+# -*-Makefile-*-
+
+CC= gcc
+SRC= main.c school.c
+OBJ= $(SRC:.c=.o)
+NAME= school
+CFLAGS= -Wall -Werror -Wextra -pedantic
+HEADER = m.h
+
+$(NAME): $(OBJ)
+    ifeq ($(wildcard $(HEADER)),)
+        $(error Header file $(HEADER) is missing)
+    else
+        $(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+    endif
+
+all: $(NAME)
+
+clean:
+	$(RM) $(NAME) *~ *.swp
+
+oclean:
+	$(RM) $(OBJ)
+
+fclean: clean oclean
+
+re: fclean all
